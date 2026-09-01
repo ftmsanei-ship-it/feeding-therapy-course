@@ -39,6 +39,20 @@ p{font-size:17px;margin:10px 0;color:var(--text)}
 .timeline-body h3,.timeline-body p{color:#fff}
 .timeline-body p{font-size:15px;color:#d7d2c8;margin:0}
 .cta{display:inline-block;background:var(--gold);color:#111;text-decoration:none;padding:14px 25px;border-radius:14px;font-weight:900;margin-top:18px;box-shadow:0 10px 25px rgba(223,171,0,.22)}
+.lead-gate-section{padding:8px 0 52px}
+.lead-gate-card{max-width:720px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:0 18px 50px rgba(0,0,0,.10)}
+.lead-gate-card h2{margin:8px 0 6px;text-align:center}
+.lead-desc{text-align:center;color:var(--muted);margin:0 0 22px}
+.lead-gate-badge{display:table;margin:0 auto 8px;background:var(--gold);color:#111;border-radius:999px;padding:5px 13px;font-weight:900;font-size:13px}
+#lead-form{display:grid;gap:12px;max-width:560px;margin:0 auto}
+#lead-form label{font-weight:800;font-size:14px;display:grid;gap:6px}
+#lead-form input,#lead-form select{width:100%;border:1px solid var(--line);background:var(--surface2);color:var(--text);border-radius:14px;padding:13px 14px;font:inherit;outline:none}
+#lead-form input:focus,#lead-form select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(231,182,0,.13)}
+#lead-submit{border:0;background:var(--gold);color:#111;border-radius:14px;padding:14px 18px;font:inherit;font-weight:900;cursor:pointer;margin-top:4px}
+#lead-submit:disabled{opacity:.65;cursor:wait}
+.lead-status{min-height:25px;text-align:center;font-size:14px;font-weight:800}
+.lead-status.error{color:#ff6b6b} .lead-status.success{color:#60d394}
+.gated-content.is-locked{display:none}
 .proof-split{display:grid;grid-template-columns:1fr;gap:24px}
 .proof-label{display:inline-block;background:var(--ink);color:#fff;border-radius:999px;padding:5px 12px;font-size:13px;font-weight:900;margin-bottom:10px}
 .quote-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px;font-size:17px;box-shadow:0 12px 35px rgba(20,16,8,.045)}
@@ -89,7 +103,7 @@ summary{font-weight:900;cursor:pointer}
 @media(max-width:760px){
 .page{padding:0 15px} .section{padding:38px 0} .hero{padding:48px 0 30px}
 .hero h1{white-space:normal;font-size:31px} .hero .en{font-size:14px} .hero-hook{font-size:23px}
-.insight-card{padding:25px 22px} .dark-panel,.treatment,.price{padding:27px 20px;border-radius:24px}
+.insight-card{padding:25px 22px} .lead-gate-card{padding:23px 18px;border-radius:22px} .dark-panel,.treatment,.price{padding:27px 20px;border-radius:24px}
 .challenge-row{grid-template-columns:44px 1fr} .curriculum-card{grid-template-columns:52px 1fr;padding:16px}
 .curr-num{width:44px;height:44px;border-radius:13px}
 .video-grid,.approaches{grid-template-columns:1fr}
@@ -106,8 +120,10 @@ h2{font-size:27px} p{font-size:16px}
 <h1>دوره تخصصی اختلالات غذاخوردن کودکان</h1>
 <div class="en">Sequential Oral Sensory (SOS) &amp; Food Chaining</div>
 <div class="hero-rule"></div>
-<div class="hero-hook">ويژه کاردرمانگران، گفتاردرمانگران، متخصصين تغذيه و پزشکان اطفال</div>
+<div class="hero-hook">صفر تا صد درمان بدغذايي کودکان<br>مناسب کاردرمانگران، گفتاردرمانگران، متخصصين تغذيه و پزشکان اطفال</div>
 </header>
+<section class="lead-gate-section" id="lead-gate"><div class="lead-gate-card"><div class="lead-gate-badge">دسترسی به مینی‌دوره</div><h2>برای مشاهده مینی‌دوره، اطلاعات زیر را وارد کنید</h2><p class="lead-desc">بعد از ثبت اطلاعات ويدئوي ميني دوره بلافاصله باز مي شود</p><form id="lead-form" novalidate><label>نام و نام خانوادگی<input id="lead-name" name="name" type="text" autocomplete="name" required placeholder="نام و نام خانوادگی"></label><label>حوزه فعالیت<select id="lead-profession" name="profession" required><option value="">حوزه فعالیت را انتخاب کنید</option><option value="کاردرمانگر">کاردرمانگر</option><option value="گفتاردرمانگر">گفتاردرمانگر</option><option value="متخصص تغذیه">متخصص تغذیه</option><option value="پزشک">پزشک</option><option value="سایر">سایر</option><option value="والد">والد</option></select></label><label>شماره تماس<input id="lead-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="مثلاً 09123456789"></label><button id="lead-submit" type="submit">مشاهده مینی‌دوره</button><div id="lead-status" class="lead-status" aria-live="polite"></div></form></div></section>
+<div id="gated-content" class="gated-content is-locked">
 <section class="section">
 <div class="mini-video local-player"><video controls preload="metadata" playsinline><source src="assets/mini-course.mp4" type="video/mp4">مرورگر شما از پخش ویدئو پشتیبانی نمی‌کند.</video></div>
 <div class="insight-card"><p>در مینی‌دوره دیدید که پشت غذا نخوردن یک کودک ممکنه علت‌های کاملاً متفاوتی وجود داشته باشه.</p>
@@ -204,7 +220,7 @@ h2{font-size:27px} p{font-size:16px}
 <div class="teacher-credential">کارشناس ارشد کاردرمانی</div>
 <p>محتوای این دوره حاصل ترکیب مطالعه تخصصی، آموزش‌های بین‌المللی و تجربه بالینی در حوزه مشکلات غذاخوردن کودکان است.</p>
 <p>در مسیر آموزش تخصصی این حوزه، دوره‌های متعددی در زمینه:</p>
-<p>Feeding Development<br>Responsive Feeding<br>Sensory Skills for Pediatric Feeding<br>Oral Motor Development for Pediatric Feeding<br>Feeding &amp; Nutrition Intervention in Autism<br>Anxious Eaters &amp; Anxious Mealtimes<br>Management of Behaviors During Feeding<br>Crumbs as a Tool in Pediatric Feeding Transitions</p>
+<p>Feeding Development<br>Responsive Feeding<br>Sensory Skills for Pediatric Feeding<br>Anxious Eaters &amp; Anxious Mealtimes<br>Management of Behaviors During Feeding</p>
 <p>گذرانده شده است.</p>
 </div>
 </div>
@@ -249,6 +265,7 @@ h2{font-size:27px} p{font-size:16px}
 <p><strong>یک ماه پشتیبانی مستقیم مدرس • دسترسی مادام‌العمر • ۳۰ روز ضمانت رضایت</strong></p>
 <a class="cta" href="https://t.me/fatemeh_saanei" target="_blank">ثبت‌نام در تلگرام با قیمت ویژه ۵٬۹۸۰٬۰۰۰ تومان</a>
 </section>
+</div>
 </main>
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
   <span class="lightbox-close" aria-label="بستن">×</span>
@@ -264,6 +281,57 @@ function closeLightbox(){
   var box=document.getElementById('lightbox'); box.classList.remove('show'); document.body.style.overflow='';
 }
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
+</script>
+<script>
+(function(){
+  const endpoint = "https://script.google.com/macros/s/AKfycby6ieWs13IsIjxU5Ax-yWv29SgPPNGYt3_vwLwQU-nmCDkKYgn0CxyLfl8voVPvh6g6/exec";
+  const campaign = "feeding-mini-series-01-sep2026";
+  const unlockKey = 'feedingMiniCourseUnlocked:' + campaign;
+  const gate = document.getElementById('lead-gate');
+  const content = document.getElementById('gated-content');
+  const form = document.getElementById('lead-form');
+  const status = document.getElementById('lead-status');
+  const button = document.getElementById('lead-submit');
+  function unlock(scroll){
+    if(content) content.classList.remove('is-locked');
+    if(gate) gate.style.display='none';
+    try{ localStorage.setItem(unlockKey,'1'); }catch(e){}
+    if(scroll && content) setTimeout(function(){content.scrollIntoView({behavior:'smooth',block:'start'});},120);
+  }
+  try{
+    if(localStorage.getItem(unlockKey)==='1') unlock(false);
+  }catch(e){}
+  if(!form) return;
+  form.addEventListener('submit', async function(ev){
+    ev.preventDefault();
+    const name=(document.getElementById('lead-name').value||'').trim();
+    const profession=(document.getElementById('lead-profession').value||'').trim();
+    const phone=(document.getElementById('lead-phone').value||'').replace(/[\s\-()]/g,'').trim();
+    const phoneOk=/^(?:\+98|0098|98|0)?9\d{9}$/.test(phone);
+    if(name.length<3){ status.textContent='لطفاً نام و نام خانوادگی را کامل وارد کنید.'; status.className='lead-status error'; return; }
+    if(!profession){ status.textContent='لطفاً حوزه فعالیت را انتخاب کنید.'; status.className='lead-status error'; return; }
+    if(!phoneOk){ status.textContent='لطفاً شماره موبایل معتبر وارد کنید.'; status.className='lead-status error'; return; }
+    if(!endpoint || !/^https:\/\/script\.google\.com\//i.test(endpoint)){
+      status.textContent='اتصال Google Sheets هنوز در موتور تنظیم نشده است.';
+      status.className='lead-status error'; return;
+    }
+    button.disabled=true; button.textContent='در حال ثبت...';
+    status.textContent=''; status.className='lead-status';
+    const body=new URLSearchParams();
+    body.set('campaign',campaign);
+    body.set('name',name); body.set('profession',profession); body.set('phone',phone);
+    body.set('page',location.href); body.set('referrer',document.referrer||'');
+    body.set('submittedAt',new Date().toISOString());
+    try{
+      await fetch(endpoint,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body:body.toString()});
+      status.textContent='ثبت شد؛ مینی‌دوره در حال باز شدن است...'; status.className='lead-status success';
+      setTimeout(function(){unlock(true);},450);
+    }catch(err){
+      status.textContent='ثبت اطلاعات انجام نشد. اینترنت را بررسی کنید و دوباره بزنید.';
+      status.className='lead-status error'; button.disabled=false; button.textContent="مشاهده مینی‌دوره";
+    }
+  });
+})();
 </script>
 </body>
 </html>
