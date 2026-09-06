@@ -23,6 +23,7 @@ p{font-size:17px;margin:10px 0;color:var(--text)}
 .mini-video.local-player{padding-top:0}
 .mini-video.local-player video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;object-fit:contain}
 .course-entry{text-align:center;padding:28px 0 14px}
+.course-main-note{max-width:760px;margin:0 auto 16px;text-align:center;font-size:18px;font-weight:850;line-height:1.9;color:var(--text)}
 .course-main-btn{width:min(100%,620px);border:0;background:var(--gold);color:#111;border-radius:17px;padding:17px 22px;font-family:inherit;font-size:18px;font-weight:900;cursor:pointer;box-shadow:0 12px 28px rgba(223,171,0,.22)}
 .course-menu{display:none;padding:12px 0 70px}
 .course-menu.show{display:block}
@@ -86,7 +87,7 @@ summary{font-weight:900;cursor:pointer}
 .lightbox-close{position:absolute;top:18px;left:22px;color:#fff;font-size:36px;line-height:1;cursor:pointer;font-family:Arial,sans-serif}
 @media(max-width:760px){
   .page{padding:0 15px} .mini-hero{padding:42px 0 24px} .mini-hero h1{font-size:31px} .mini-hero p{font-size:15px}
-  .section{padding:30px 0} .course-main-btn{font-size:16px} .course-panel{padding:21px 17px;border-radius:20px}
+  .section{padding:30px 0} .course-main-note{font-size:16px;margin-bottom:12px} .course-main-btn{font-size:16px} .course-panel{padding:21px 17px;border-radius:20px}
   .included{columns:1} .teacher-card{grid-template-columns:1fr;padding:18px} .teacher-photo-wrap{width:min(72%,280px);margin:auto}
   .cert-grid{grid-template-columns:1fr} .video-grid{grid-template-columns:1fr} .masonry-grid{columns:1}
   h2{font-size:26px} p{font-size:16px}
@@ -102,6 +103,7 @@ summary{font-weight:900;cursor:pointer}
 </header>
 <section class="section"><div class="mini-video local-player"><video controls preload="metadata" playsinline><source src="assets/mini-course.mp4" type="video/mp4">مرورگر شما از پخش ویدئو پشتیبانی نمی‌کند.</video></div></section>
 <div class="course-entry">
+  <div class="course-main-note">این مینی‌دوره بخشی از دوره جامع اختلالات غذاخوردن کودکان است.</div>
   <button type="button" class="course-main-btn" onclick="toggleCourseMenu(this)">درباره دوره اصلی بیشتر بدانید</button>
 </div>
 <div id="course-menu" class="course-menu">
